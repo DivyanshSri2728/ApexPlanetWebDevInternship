@@ -1,0 +1,171 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #74b9ff, #a29bfe);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #0984e3;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+header nav a.active {
+    text-decoration: underline;
+}
+
+/* To-Do Section */
+.todo-app {
+    background: #fff;
+    margin: 40px auto;
+    width: 350px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.input-box button {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-box button:hover {
+    background-color: #74b9ff;
+}
+
+/* Task List */
+#taskList {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#taskList li {
+    background: #f1f2f6;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+#taskList li:hover {
+    background: #dfe6e9;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete-btn {
+    background-color: #d63031;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #ff7675;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #fff;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+button {
+    background-color: #0984e3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #74b9ff;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background: #0984e3;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

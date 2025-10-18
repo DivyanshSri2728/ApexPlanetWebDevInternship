@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <header>
+        <h1>📞 Contact Us</h1>
+    </header>
+
+    <section class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>Have feedback, questions, or ideas? We’d love to hear from you!</p>
+
+        <form id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message..."></textarea>
+
+            <button type="submit">Send Message</button>
+            <p id="formMsg"></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 My To-Do App | Built with 💻 & ❤️</p>
+    </footer>
+    <script src="contact.js"></script>
+
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const msg = document.getElementById('formMsg');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                msg.style.color = 'red';
+                msg.textContent = 'Please fill out all fields!';
+            } else if (!email.includes('@')) {
+                msg.style.color = 'red';
+                msg.textContent = 'Please enter a valid email address!';
+            } else {
+                msg.style.color = 'green';
+                msg.textContent = 'Thank you! Your message has been sent.';
+                form.reset();
+            }
+});
+    </script>
+
+</body>
+</html>
