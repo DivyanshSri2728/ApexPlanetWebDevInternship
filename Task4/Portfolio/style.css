@@ -1,0 +1,242 @@
+:root {
+      --bg: #0a0a0f;
+      --text: #e0e0e0;
+      --accent: #00fff0;
+      --secondary: #ff2dcb;
+      --card: #141420;
+      --glow: 0 0 20px rgba(0,255,240,0.4);
+    }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #0a0a0f 0%, #050509 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2.5rem;
+      background: rgba(10, 10, 15, 0.75);
+      backdrop-filter: blur(15px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 0 10px rgba(0,255,240,0.05);
+    }
+    header h1 {
+      font-size: 1.4rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
+    }
+    nav a {
+      margin: 0 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    nav a:hover {
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
+    }
+
+    section {
+      padding: 110px 10%;
+      min-height: 100vh;
+    }
+    #home {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at top left, rgba(0,255,240,0.08), transparent 70%), radial-gradient(circle at bottom right, rgba(255,45,203,0.08), transparent 70%);
+      animation: fadeIn 1s ease forwards;
+    }
+    #home h2 {
+      font-size: 2.8rem;
+      color: var(--accent);
+      text-shadow: var(--glow);
+      animation: glowText 2s infinite alternate;
+    }
+    #home p {
+      max-width: 700px;
+      color: #aaa;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+    .btn {
+      margin-top: 25px;
+      padding: 12px 28px;
+      border: 2px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.4s;
+      box-shadow: 0 0 10px rgba(0,255,240,0.1);
+    }
+    .btn:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 0 20px var(--accent);
+      transform: translateY(-2px);
+    }
+
+    #about, #projects, #contact {
+      background: rgba(20,20,30,0.6);
+      margin-top: 2rem;
+      border-radius: 14px;
+      padding: 3rem;
+      box-shadow: 0 0 25px rgba(0,255,240,0.08);
+      transition: 0.3s;
+    }
+    #about:hover, #projects:hover, #contact:hover {
+      box-shadow: 0 0 40px rgba(0,255,240,0.15);
+    }
+
+    h3.section-title {
+      color: var(--secondary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 0 0 15px var(--secondary);
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+    .skill {
+      background: rgba(0,255,240,0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .skill:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 15px var(--accent);
+      background: rgba(0,255,240,0.2);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: linear-gradient(145deg, rgba(10,10,15,0.9), rgba(20,20,30,0.9));
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 25px;
+      transition: 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(var(--accent), var(--secondary), var(--accent));
+      animation: rotate 6s linear infinite;
+      opacity: 0.05;
+    }
+    .project-card h4 {
+      color: var(--accent);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .project-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 0 25px rgba(0,255,240,0.2);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+      background: rgba(10,10,15,0.8);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      padding: 12px;
+      border-radius: 8px;
+      resize: none;
+      transition: 0.3s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+    .contact-form button {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      box-shadow: 0 0 25px var(--accent);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      background: rgba(10,10,15,0.7);
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px var(--accent); }
+      to { text-shadow: 0 0 25px var(--accent), 0 0 50px var(--secondary); }
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do & Notes — Neon Dark</title>
+  <meta name="description" content="Combined To-Do List and Note-Taking app with LocalStorage. CRUD, filters, search and export/import." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">DS</div>
+        <div>
+          <h1>To-Do & Notes</h1>
+          <div class="subtitle">Save tasks and notes locally — CRUD + Persistence</div>
+        </div>
+      </div>
+      <div class="small">Built with HTML • CSS • JavaScript • localStorage</div>
+    </header>
+
+    <div class="grid">
+      <!-- LEFT: controls / input -->
+      <aside>
+        <div class="panel">
+          <div class="tabs" role="tablist">
+            <div class="tab active" data-mode="tasks">Tasks</div>
+            <div class="tab" data-mode="notes">Notes</div>
+          </div>
+
+          <!-- TASK FORM -->
+          <form id="taskForm" autocomplete="off">
+            <label>Title</label>
+            <input type="text" id="taskTitle" placeholder="Buy groceries" required>
+
+            <div class="row">
+              <div class="col">
+                <label>Due</label>
+                <input type="date" id="taskDue">
+              </div>
+              <div class="col">
+                <label>Priority</label>
+                <select id="taskPriority">
+                  <option value="low">Low</option>
+                  <option value="medium" selected>Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+            </div>
+
+            <label>Notes (optional)</label>
+            <textarea id="taskNote" placeholder="Extra details..."></textarea>
+
+            <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
+              <button type="reset" class="btn">Clear</button>
+              <button type="submit" class="btn primary">Add Task</button>
+            </div>
+          </form>
+
+          <!-- NOTE FORM -->
+          <form id="noteForm" style="display:none;margin-top:12px" autocomplete="off">
+            <label>Title</label>
+            <input type="text" id="noteTitle" placeholder="Meeting notes" required>
+            <label>Note</label>
+            <textarea id="noteBody" placeholder="Type your note..."></textarea>
+            <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
+              <button type="reset" class="btn">Clear</button>
+              <button type="submit" class="btn primary">Add Note</button>
+            </div>
+          </form>
+
+          <div class="small" style="margin-top:12px">Tip: Switch tabs to add tasks or notes. All data is stored in your browser.</div>
+        </div>
+
+        <div class="panel" style="margin-top:12px">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div class="muted">Storage</div>
+            <div id="storageCount" class="muted">0 items</div>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+            <button id="exportBtn" class="btn">Export JSON</button>
+            <button id="importBtn" class="btn">Import</button>
+            <input id="importFile" type="file" accept="application/json" style="display:none">
+            <button id="clearAll" class="btn" style="background:transparent;color:var(--muted)">Clear All</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: lists -->
+      <main>
+        <div class="panel">
+          <div class="list-head">
+            <div style="display:flex;align-items:center;gap:12px">
+              <input id="search" class="search" placeholder="Search tasks & notes...">
+              <div class="filters">
+                <div class="pill" id="showAll">All</div>
+                <div class="pill" id="showActive">Active</div>
+                <div class="pill" id="showDone">Done</div>
+              </div>
+            </div>
+            <div class="muted" id="itemsInfo">Tasks: 0 • Notes: 0</div>
+          </div>
+
+          <div class="zone" id="taskZone"></div>
+          <div class="zone" id="noteZone"></div>
+
+          <div id="emptyState" class="empty">No tasks or notes yet — add something from the left.</div>
+        </div>
+
+        <div class="small" style="margin-top:12px">You can edit or delete any item. Click the colored box to mark a task done.</div>
+      </main>
+    </div>
+  </div>
+<script src="script.js"></script>
+
+</body>
+</html>

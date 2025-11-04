@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Listing | Clean E-Commerce</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ShopEase</h1>
+    <input type="text" id="search" placeholder="Search products..." />
+  </header>
+
+  <main>
+    <aside class="filters">
+      <h2>Filters</h2>
+      <div class="filter-group">
+        <h3>Category</h3>
+        <div id="categories"></div>
+      </div>
+      <div class="filter-group">
+        <h3>Price</h3>
+        <label>Max: $<span id="priceMax">1000</span></label>
+        <input type="range" id="priceRange" min="0" max="1000" value="1000" />
+      </div>
+      <div class="filter-group">
+        <h3>Sort By</h3>
+        <select id="sortBy">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating: High to Low</option>
+          <option value="popularity-desc">Popularity</option>
+        </select>
+      </div>
+      <button id="clearFilters">Clear Filters</button>
+    </aside>
+
+    <section class="products-section">
+      <div id="resultsSummary"></div>
+      <div id="productsGrid" class="products-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 ShopEase. Built by Divyansh Srivastava.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

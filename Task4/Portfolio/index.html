@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divyansh Srivastava | Frontend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Divyansh Srivastava</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Frontend Developer | Building Interactive Web Experiences</h2>
+    <p>Hi, I'm <strong>Divyansh Srivastava</strong>. I specialize in crafting visually appealing, user-friendly websites and interfaces using modern web technologies.</p>
+    <button class="btn" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'});">View My Work</button>
+  </section>
+
+  <section id="about">
+    <h3 class="section-title">About Me</h3>
+    <p>I’m a passionate Frontend Developer currently pursuing BCA. I love bringing designs to life through clean, efficient code. My interests lie in UI/UX, web animations, and performance optimization.</p>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React</div>
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3 class="section-title">Projects</h3>
+    <div class="projects">
+      <div class="project-card">
+        <h4>NextUse (OLX Clone)</h4>
+        <p>A React-based product listing app with image upload and form submission using Axios.</p>
+      </div>
+      <div class="project-card">
+        <h4>AI Image Generator</h4>
+        <p>Frontend-based generator using DeepAI API with theme toggle and dropdown selections.</p>
+      </div>
+      <div class="project-card">
+        <h4>Dynamic To-Do List</h4>
+        <p>A responsive to-do app built with HTML, CSS, and JavaScript featuring LocalStorage support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3 class="section-title">Contact Me</h3>
+    <form class="contact-form" action="mailto:your.email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Divyansh Srivastava — All rights reserved.
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
