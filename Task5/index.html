@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern E-Commerce Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>ShopEase</h1>
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search products..." />
+      <select id="sort">
+        <option value="">Sort by</option>
+        <option value="low">Price: Low to High</option>
+        <option value="high">Price: High to Low</option>
+      </select>
+      <div class="theme-toggle" id="themeToggle">🌙</div>
+      <button class="cart-btn" id="cartBtn">🛒 Cart <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <ul id="categories"></ul>
+    </aside>
+
+    <section>
+      <div class="products-grid" id="productGrid"></div>
+    </section>
+  </main>
+
+  <!-- CART PANEL -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="closeCart">✖</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div>Total: ₹<span id="cartTotal">0</span></div>
+      <button id="checkoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  <footer>© 2025 ShopEase. All rights reserved.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
